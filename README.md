@@ -17,7 +17,7 @@ Welcome to the Backend API Project repository! This project demonstrates the imp
 1. Clone this repository to your local machine using `git clone https://github.com/wandaazhar007/portfolio-backend.git`.
 2. Install project dependencies using `npm install`.
 3. Set up your MySQL database and update the database configuration in `.env`.
-4. Run the server using `npm start`.
+4. Run the server using `node index`.
 5. Explore the API endpoints and test different routes using tools like Postman.
 
 ## Usage
