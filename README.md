@@ -14,7 +14,7 @@ Welcome to the Backend API Project repository! This project demonstrates the imp
 
 ## Getting Started
 
-1. Clone this repository to your local machine using `git clone https://github.com/your-username/your-repo.git`.
+1. Clone this repository to your local machine using `git clone https://github.com/wandaazhar007/portfolio-backend.git`.
 2. Install project dependencies using `npm install`.
 3. Set up your MySQL database and update the database configuration in `.env`.
 4. Run the server using `npm start`.
