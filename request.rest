@@ -1,0 +1,18 @@
+GET http://localhost:2001/my-work
+
+###
+GET http://localhost:2001/my-work/1
+
+###
+POST http://localhost:2001/my-work
+Content-Type: application/json
+
+{
+  "name": "Wanda Azhar",
+  "desc": "wandaazhar@gmail.com",
+  "tag": "reactjs, nodejs, sequelize, mysql",
+  "github": "https://github.com/wandaazhar007/portfolio/",
+  "preview": "https://kanshamissouri.com/",
+  "image": "000000",
+  "urlImage": "000000"
+}
