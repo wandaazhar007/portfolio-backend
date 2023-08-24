@@ -31,16 +31,14 @@ const MyWork = db.define('mywork', {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
-      len: [3, 30]
+      notEmpty: true
     }
   },
   github: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
-      len: [3, 30]
+      notEmpty: true
     }
   },
   tag: {

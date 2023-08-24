@@ -79,9 +79,9 @@ export const createMyWork = async (req, res) => {
   const license = req.body.license;
   const preview = req.body.preview;
   const github = req.body.github;
-  return console.log(github);
   const image = req.files.image;
   const fileSize = image.data.length;
+  // return console.log(image.name);
   const ext = path.extname(image.name);
   const random = Math.floor(Math.random() * 10000);
   const fileName = image.md5 + random + ext;
@@ -95,7 +95,7 @@ export const createMyWork = async (req, res) => {
   image.mv(`./public/images/my-work/${fileName}`, async (err) => {
     if (err) return res.status(500).json({ msg: err.message });
     try {
-      await Products.create({
+      await MyWork.create({
         name: name,
         desc: desc,
         preview: preview,
@@ -107,7 +107,7 @@ export const createMyWork = async (req, res) => {
       });
       res.status(200).json({ msg: "Work has been saved" });
     } catch (error) {
-      if (error) return res.status(500).json({ msg: err.message });
+      if (error) return res.status(500).json({ msg: error.message });
       // res.status(201).json({ msg: error.message });
       // console.log(error.message);
     }
