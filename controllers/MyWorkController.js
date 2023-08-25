@@ -23,7 +23,7 @@ export const getMyWork = async (req, res) => {
   });
   const totalPage = Math.ceil(totalRows / limit);
   const result = await MyWork.findAll({
-    attributes: ['id', 'uuid', 'name', 'desc', 'tag', 'preview', 'github', 'image', 'urlImage', 'license', 'createdAt'],
+    attributes: ['id', 'uuid', 'name', 'desc', 'tag', 'preview', 'github', 'type', 'image', 'urlImage', 'license', 'createdAt'],
     where: {
       [Op.or]: [{
         name: {
@@ -60,7 +60,7 @@ export const getMyWorkById = async (req, res) => {
 
   try {
     const response = await MyWork.findOne({
-      attributes: ['id', 'uuid', 'name', 'desc', 'tag', 'preview', 'github', 'image', 'urlImage', 'createdAt'],
+      attributes: ['id', 'uuid', 'name', 'desc', 'tag', 'preview', 'github', 'type', 'image', 'urlImage', 'createdAt'],
       where: {
         id: req.params.id
       }
@@ -79,6 +79,7 @@ export const createMyWork = async (req, res) => {
   const license = req.body.license;
   const preview = req.body.preview;
   const github = req.body.github;
+  const type = req.body.type;
   const image = req.files.image;
   const fileSize = image.data.length;
   // return console.log(image.name);
@@ -102,6 +103,7 @@ export const createMyWork = async (req, res) => {
         github: github,
         tag: tag,
         license: license,
+        type: type,
         image: fileName,
         urlImage: url
       });

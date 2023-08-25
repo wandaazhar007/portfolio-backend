@@ -55,6 +55,13 @@ const MyWork = db.define('mywork', {
       notEmpty: true
     }
   },
+  type: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
   image: {
     type: DataTypes.STRING
   },
