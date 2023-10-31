@@ -7,6 +7,8 @@ import FileUpload from "express-fileupload";
 // import bodyParser from "body-parser";
 import db from "./config/Db_Config.js";
 import MyWorkRoute from './routes/MyWorkRoute.js';
+import MyBlogRoute from './routes/MyBlogRoute.js';
+import CategoryRoute from './routes/CategoryRoute.js';
 
 dotenv.config();
 const PORT = process.env.PORT;
@@ -33,6 +35,8 @@ app.use(
     extended: true,
   }),
 );
-app.use(MyWorkRoute)
+app.use(MyWorkRoute);
+app.use(MyBlogRoute);
+app.use(CategoryRoute);
 
 app.listen(PORT, () => console.log(`server running on port: ${PORT}`));
