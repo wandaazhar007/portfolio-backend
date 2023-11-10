@@ -57,22 +57,15 @@ export const getMyBlog = async (req, res) => {
   });
 }
 
+
 export const getButtonCategory = async (req, res) => {
   const page = parseInt(req.query.page) || 0;
-  const limit = parseInt(req.query.limit) || 4;
-  const search = req.query.search_query || "";
+  const limit = parseInt(req.query.limit) || 10;
+  const categoryId = req.query.category_id || "";
   const offset = limit * page;
   const totalRows = await MyBlog.count({
     where: {
-      [Op.or]: [{
-        title: {
-          [Op.like]: '%' + search + '%'
-        }
-      }, {
-        desc: {
-          [Op.like]: '%' + search + '%'
-        }
-      }]
+      categoryId: categoryId
     }
   });
   const totalPage = Math.ceil(totalRows / limit);
@@ -86,10 +79,14 @@ export const getButtonCategory = async (req, res) => {
       }
     ],
     where: {
-      categoryId: search
+      categoryId: categoryId
     },
+    offset: offset,
+    limit: limit,
+    order: [
+      ['id', 'DESC']
+    ]
   });
-
   res.json({
     result: result,
     page: page,
