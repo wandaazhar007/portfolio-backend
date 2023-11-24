@@ -60,7 +60,7 @@ export const getMyWorkById = async (req, res) => {
 
   try {
     const response = await MyWork.findOne({
-      attributes: ['id', 'uuid', 'name', 'desc', 'tag', 'preview', 'github', 'type', 'image', 'urlImage', 'createdAt'],
+      attributes: ['id', 'uuid', 'name', 'desc', 'tag', 'preview', 'github', 'license', 'type', 'image', 'urlImage', 'createdAt'],
       where: {
         id: req.params.id
       }

@@ -19,7 +19,7 @@ const app = express();
   await db.sync();
 })();
 
-app.use(cors({ credentials: true, origin: '*' }));
+app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'https://wandaazhar.vercel.app'] }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(FileUpload());
