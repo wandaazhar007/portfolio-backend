@@ -4,7 +4,7 @@ GET http://localhost:2001/my-work
 GET http://localhost:2001/my-work/1
 
 ###
-POST http://localhost:2001/my-work
+POST http://localhost:2001/my-work/
 Content-Type: application/json
 
 {
