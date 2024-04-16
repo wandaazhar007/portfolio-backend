@@ -3,10 +3,10 @@ import { createCategory, getCategory, getCategoryById, updateCategory, deleteCat
 
 const router = express.Router();
 
-router.get('/category', getCategory);
-router.get('/category/:id', getCategoryById);
-router.post('/category', createCategory);
-router.patch('/category/:id', updateCategory);
-router.delete('/category/:id', deleteCategory)
+router.get('/api/category', getCategory);
+router.get('/api/category/:id', getCategoryById);
+router.post('/api/category', createCategory);
+router.patch('/api/category/:id', updateCategory);
+router.delete('/api/category/:id', deleteCategory)
 
 export default router;

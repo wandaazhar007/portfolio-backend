@@ -3,10 +3,10 @@ import { createMyWork, getMyWork, getMyWorkById, updateMyWork, deleteMyWork } fr
 
 const router = express.Router();
 
-router.get('/my-work', getMyWork);
-router.get('/my-work/:id', getMyWorkById);
-router.post('/my-work', createMyWork);
-router.patch('/my-work/:id', updateMyWork);
-router.delete('/my-work/:id', deleteMyWork);
+router.get('/api/my-work', getMyWork);
+router.get('/api/my-work/:id', getMyWorkById);
+router.post('/api/my-work', createMyWork);
+router.patch('/api/my-work/:id', updateMyWork);
+router.delete('/api/my-work/:id', deleteMyWork);
 
 export default router;

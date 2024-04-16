@@ -3,12 +3,12 @@ import { createBlog, getAllBlog, getMyBlog, updateMyBlog, getButtonCategory, del
 
 const router = express.Router();
 
-router.get('/my-blog', getMyBlog);
-router.get('/my-blog-per-category', getButtonCategory);
-router.get('/my-blog-all', getAllBlog);
-// router.get('/my-blog/:id', getMyBlogById);
-router.post('/my-blog', createBlog);
-router.patch('/my-blog/:id', updateMyBlog);
-router.delete('/my-blog/:id', deleteMyBlog);
+router.get('/api/my-blog', getMyBlog);
+router.get('/api/my-blog-per-category', getButtonCategory);
+router.get('/api/my-blog-all', getAllBlog);
+// router.get('/api/my-blog/:id', getMyBlogById);
+router.post('/api/my-blog', createBlog);
+router.patch('/api/my-blog/:id', updateMyBlog);
+router.delete('/api/my-blog/:id', deleteMyBlog);
 
 export default router;
