@@ -40,6 +40,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci 
-    - run: pm2 stop portfolio-backend
-    - run: pm2 delete portfolio-backend
-    - run: pm2 start index.js --name "portfolio-backend"
+    - run: pm2 stop api_portfolio
+    - run: pm2 delete api_portfolio
+    - run: pm2 start index.js --name "api_portfolio"
